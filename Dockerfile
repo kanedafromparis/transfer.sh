@@ -1,4 +1,4 @@
-FROM golang
+FROM golang:1.7.3-alpine
 MAINTAINER Remco Verhoef <remco@dutchcoders.io>
 
 RUN mkdir -p /go/src/app
