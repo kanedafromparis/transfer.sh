@@ -13,6 +13,8 @@ RUN go get ./
 # build & install server
 RUN go install . 
 
-ENTRYPOINT ["/go/bin/app", "--port", "8080"]  
+RUN mkdir -p /data && chmo a+rwX /data
+
+ENTRYPOINT ["/go/bin/app", "--port", "8080", "-provider=local" "--temp=/tmp/" "--basedir=/data"]  
 
 EXPOSE 8080 6060
